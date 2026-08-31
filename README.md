@@ -2,23 +2,12 @@ jhonatanmoura.com 🌐
 
 Oi, meu nome é Jhonatan!
 
-Esse é meu site portfólio, projeto onde busquei colocar em prática conceitos e ferramentas de infraestrutura como Git, GitHub, Docker, Terraform, CI/CD e AWS.
+Esse é meu site portfólio, projeto onde busquei colocar em prática conceitos e ferramentas como **Git, GitHub, Docker, Terraform, CI/CD e AWS.**
 
-No canto superior direito, vai ter um "Jogo anos 2000" — é um projeto inicial que decidi colocar dentro desse site. É um jogo simples onde você escolhe um personagem e anda em uma rua reta, sendo apresentado a vídeos, textos e imagens nostálgicas que só quem viveu os anos 2000 vai entender.
+No canto superior direito, vai ter um "Jogo anos 2000" — é um projeto inicial que decidi colocar dentro desse site. É um jogo simples onde você escolhe um personagem e anda em uma rua reta, sendo apresentado a vídeos, textos ou imagens nostálgicas que só quem viveu os anos 2000 vai entender.
 
-Vou colocar aqui o passo a passo da criação do projeto e como a infraestrutura está se comportando.Site de Portifólio criado para prática de ferramentas e metodologias como Git, GitHub, CI/CD, Terraform, Docker e AWS.
+Vou colocar aqui o passo a passo da criação do projeto e como a infraestrutura está se comportando.
 
-O que será usado:
-
-🛠️ Stack
-
-Camada	Tecnologia
-Frontend	HTML5, CSS, JavaScript puro (Claude Code para criação)
-Containerização	Docker (Nginx)
-Infraestrutura como código	Terraform
-Deploy automático	GitHub Actions (CI/CD)
-Hospedagem	AWS EC2
-Domínio/DNS	AWS Route53 (jhonatanmoura.com)
 
 🚀 Passo a passo de implantação/revisão
 
@@ -44,5 +33,5 @@ Domínio/DNS	AWS Route53 (jhonatanmoura.com)
 - 4.4 — Clone do repositório, criação da imagem e execução do container
 - 4.5 — Teste do site no navegador
 
-### 5️⃣ Terraform ⏳
+### 5️⃣ Estudo Terraform
 - 5.1 — ⏳ *loading...*
