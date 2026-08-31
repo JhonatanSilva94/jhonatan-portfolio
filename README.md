@@ -17,13 +17,13 @@ Vou colocar aqui o passo a passo da criação do projeto e como a infraestrutura
 ### 2️⃣ Frontend ✅
 - 2.1 — Entendimento e avaliação de como a aplicação seria feita e complexidade de criação
 - 2.2 — Uso do Claude Code para codificação
-- 2.3 - Teste do ambiente na máquina local
+- 2.3 — Teste do ambiente na máquina local
 - 2.4 — Push do projeto pro GitHub e finalização da primeira parte do frontend
 
 ### 3️⃣ Estudo Docker ✅
 - 3.1 — Instalação do Docker Desktop e criação do Dockerfile
 - 3.2 — Criação da imagem e teste da aplicação no container criado na máquina local
-- 3.3 - Push do Dockerfile pro GitHub
+- 3.3 — Push do Dockerfile pro GitHub
 
 ### 4️⃣ Criação da Infra manualmente na AWS ✅ *(Segundo passo é transformar em código via Terraform)*
 - 4.1 — Criação do ambiente manualmente na AWS (Criado na região us-east-1 para fins de custos)
