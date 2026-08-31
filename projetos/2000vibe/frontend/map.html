@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2000vibe | Mapa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="map.css" />
+  </head>
+  <body>
+    <div class="hud">
+      <div class="brand-block">
+        <span class="brand-mark">2000</span>
+        <span class="brand-word">VIBE</span>
+      </div>
+
+      <div class="status-block">
+        <span class="status-label">PERSONAGEM</span>
+        <span id="player-name">Carregando...</span>
+      </div>
+
+      <div class="controls">
+        <div class="control-hint" aria-label="Segurar setas para andar e voltar">↑ / ↓ Segurar</div>
+        <button id="restart-button" class="control-button secondary" type="button">Recomeçar</button>
+      </div>
+    </div>
+
+    <main class="game-shell">
+      <section class="map-wrapper">
+        <div id="game-map" class="game-map" aria-label="Mapa do jogo">
+          <div class="road-rail road-rail-left"></div>
+          <div class="road-rail road-rail-right"></div>
+          <div id="finish-sign" class="finish-sign" aria-label="Final do percurso">
+            <img src="assets/images/areas/final.png" alt="Final" />
+          </div>
+          <div id="lane-markers" class="lane-markers"></div>
+          <div id="finish-popup" class="finish-popup hidden" aria-live="polite">Final</div>
+
+          <div id="player" class="player" aria-label="Personagem do jogador">
+            <span class="shadow"></span>
+            <span class="head"></span>
+            <span class="body"></span>
+            <span class="accent"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="checkpoint-modal" class="checkpoint-modal hidden" aria-live="polite">
+      <div class="checkpoint-panel">
+        <button id="close-checkpoint" class="close-button" type="button" aria-label="Fechar">×</button>
+        <p id="checkpoint-tag" class="checkpoint-tag">PONTO DE NOSTALGIA</p>
+        <h2 id="checkpoint-title">Checkpoint verificado</h2>
+        <p id="checkpoint-text">Área desbloqueada.</p>
+        <div id="checkpoint-video-wrapper" class="checkpoint-video-wrapper hidden">
+          <iframe
+            id="checkpoint-video"
+            src=""
+            title="Vídeo do checkpoint"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="checkpoint-visual">
+          <img id="checkpoint-image" src="" alt="Imagem do checkpoint" />
+        </div>
+      </div>
+    </div>
+
+    <script src="map.js"></script>
+  </body>
+</html>

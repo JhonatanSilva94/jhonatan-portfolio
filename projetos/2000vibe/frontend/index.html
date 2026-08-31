@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2000vibe | Seleção de personagem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="backdrop-glow glow-left"></div>
+    <div class="backdrop-glow glow-right"></div>
+
+    <div class="app-shell">
+      <header class="top-bar">
+        <div class="brand-block">
+          <span class="brand-mark">2000</span>
+          <span class="brand-word">VIBE</span>
+        </div>
+        <span class="status-pill">SELEÇÃO DE PERSONAGEM</span>
+      </header>
+
+      <main class="selection-panel">
+        <section class="intro-copy">
+          <p class="eyebrow">SELEÇÃO DE PERSONAGEM</p>
+          <h1>Escolha seu estilo.</h1>
+          <p class="subtitle">
+            Quem era você nos anos 2000?
+          </p>
+        </section>
+
+        <section class="character-grid" aria-label="Seleção de personagens">
+          <button class="character-card" type="button" data-character="neon-racer" aria-pressed="false">
+            <div class="card-art art-emo">
+              <img class="character-image" src="assets/images/emo.png" alt="Emo" />
+            </div>
+            <div class="card-copy">
+              <h2>Emo</h2>
+            </div>
+            <span class="selection-indicator" aria-hidden="true">✓</span>
+          </button>
+
+          <button class="character-card" type="button" data-character="pixel-star" aria-pressed="false">
+            <div class="card-art art-skatista">
+              <img class="character-image" src="assets/images/skatista.png" alt="Skatista" />
+            </div>
+            <div class="card-copy">
+              <h2>Skatista</h2>
+            </div>
+            <span class="selection-indicator" aria-hidden="true">✓</span>
+          </button>
+
+          <button class="character-card" type="button" data-character="chrome-rebel" aria-pressed="false">
+            <div class="card-art art-psy">
+              <img class="character-image" src="assets/images/dançarina.png" alt="Dançarina Psy" />
+            </div>
+            <div class="card-copy">
+              <h2>Dançarina Psy</h2>
+            </div>
+            <span class="selection-indicator" aria-hidden="true">✓</span>
+          </button>
+        </section>
+
+        <div class="selection-summary-wrap">
+          <p id="selection-summary">Nenhum personagem selecionado.</p>
+        </div>
+
+        <div class="action-row">
+          <button id="start-button" class="start-button" type="button" disabled>
+            Começar a nostalgia
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "nome": "Brincadeiras",
+    "texto": "Antes de tela virar sinônimo de diversão, a rua era tudo. Pipa empinada até o fio de luz, bolinha de gude na terra, pique-esconde até a mãe chamar pra jantar, peão, pega-pega, bafo... Nos viravamos com pouco e ainda tinha energia pra brincar até escurecer.",
+    "image": "assets/images/areas/bola_de_gude.png",
+    "imagem": "assets/images/areas/bola_de_gude.png",
+    "sound": null,
+    "som": null,
+    "minimal": true
+  },
+  {
+    "id": 2,
+    "nome": "Músicas",
+    "texto": "Rádio ligado o dia inteiro, CD gravado com as melhores do momento, e aquele hit que grudava na cabeça sem dó. De rock nacional a Hip Hop que tomava conta das rádios, a trilha sonora da década tocava em todo lugar.",
+    "image": "assets/images/areas/musicas.png",
+    "imagem": "assets/images/areas/musicas.png",
+    "sound": null,
+    "som": null,
+    "videos_youtube": ["cPXWqAYxnfw&list=RDcPXWqAYxnfw&start_radio=1"]
+  },
+  {
+    "id": 3,
+    "nome": "Vídeo Games",
+    "texto": "PS2 rodando no maior volume, memory card cheio de save, e aquela LAN house lotada no fim de semana pra jogar CS. Ahhh, o SuperNintendo, MegaDrive...",
+    "image": "assets/images/areas/videogames.png",
+    "imagem": "assets/images/areas/videogames.png",
+    "sound": "VideoGames.mp3",
+    "som": "VideoGames.mp3"
+  },
+  {
+    "id": 4,
+    "nome": "Internet",
+    "texto": "Internet? Foi caminhando aos poucos. MSN, Orkut, Lan Houses lotadas, todo mundo postando fotos e entrando em comunidades do orkut.",
+    "image": "assets/images/areas/comunidade_orkut.png",
+    "imagem": "assets/images/areas/comunidade_orkut.png",
+    "sound": "Internet.mp3",
+    "som": "Internet.mp3",
+    "minimal": true
+  },
+  {
+    "id": 5,
+    "nome": "Tecnologias",
+    "texto": "Celular com antena, toque polifônico escolhido a dedo, Tamagotchi implorando por comida. Quem tinha Sony Ericson era rei na escola e na rua!",
+    "image": "assets/images/areas/tecnologias.png",
+    "imagem": "assets/images/areas/tecnologias.png",
+    "sound": "Tecnologias.mp3",
+    "som": "Tecnologias.mp3",
+    "videos_youtube": ["GsvNbTWAO0E"]
+  },
+  {
+    "id": 6,
+    "nome": "Televisão",
+    "texto": "TV Globinho abrindo o dia, e no SBT, Chaves e Chapolim Colorado repetindo sem parar. Entre um desenho e outro, ainda dava tempo pra Sítio do Picapau Amarelo, Caverna do Dragão e um tanto de animes como Dragon Ball e Cavaleiros do Zodiaco.",
+    "image": "assets/images/areas/televisao.jpg",
+    "imagem": "assets/images/areas/televisao.jpg",
+    "sound": "Televisao.mp3",
+    "som": "Televisao.mp3",
+    "videos_youtube": ["7DZwWzdHPug"]
+  },
+  {
+    "id": 7,
+    "nome": "Eventos",
+    "texto": "Teve notícia que parou o país, teve manchete que ninguém esqueceu. A década foi cheia de momentos que grudaram na memória coletiva — daqueles que você lembra exatamente onde estava quando viu.",
+    "image": "assets/images/areas/eventos.png",
+    "imagem": "assets/images/areas/eventos.png",
+    "sound": null,
+    "som": null
+  },
+  {
+    "id": 8,
+    "nome": "Esportes",
+    "texto": "2002, tela ligada, país parado. O pentacampeonato veio e o Brasil inteiro comemorou junto. No tênis, Guga no auge. No vôlei, o Brasil dominando as 2 modalidades.",
+    "image": "assets/images/areas/esportes.jpg",
+    "imagem": "assets/images/areas/esportes.jpg",
+    "sound": "Esportes.mp3",
+    "som": "Esportes.mp3",
+    "videos_youtube": ["AzXYGdyfV4o"]
+  },
+  {
+    "id": 9,
+    "nome": "Final",
+    "texto": "Você completou a jornada pela nostalgia! Da rua ao Orkut, do pentacampeonato ao Tamagotchi — reviveu os anos 2000 do jeito que só quem cresceu nessa época entende. Valeu a viagem no tempo!",
+    "image": "assets/images/areas/final.png",
+    "imagem": "assets/images/areas/final.png",
+    "sound": null,
+    "som": null,
+    "videos_youtube": ["2TVP8TXeFqo"]
+  }
+]
