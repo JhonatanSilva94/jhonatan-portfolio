@@ -89,7 +89,7 @@ body {
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 24px;
   font-family: "Orbitron", sans-serif;
   letter-spacing: 0.12em;
   font-size: 1.2rem;
@@ -137,6 +137,28 @@ body {
   background: rgba(78, 242, 255, 0.15);
   box-shadow: 0 0 16px rgba(78, 242, 255, 0.4);
   text-shadow: 0 0 12px rgba(78, 242, 255, 0.5);
+}
+
+.navbar-repo-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(78, 242, 255, 0.4);
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: rgba(78, 242, 255, 0.08);
+}
+
+.navbar-repo-link:hover {
+  border-color: var(--accent-cyan);
+  background: rgba(78, 242, 255, 0.18);
+  box-shadow: 0 0 12px rgba(78, 242, 255, 0.3);
+  color: #fff;
+  text-shadow: 0 0 8px rgba(78, 242, 255, 0.4);
 }
 
 /* ==================== MAIN CONTENT ==================== */
