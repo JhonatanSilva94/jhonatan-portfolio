@@ -441,6 +441,40 @@ window.addEventListener('keyup', (event) => {
 restartButton.addEventListener('click', resetRun);
 closeCheckpointButton.addEventListener('click', closeCheckpoint);
 
+const touchForwardButton = document.getElementById('touch-forward');
+const touchBackButton = document.getElementById('touch-back');
+
+function bindHoldButton(button, onPress, onRelease) {
+  if (!button) return;
+
+  const press = (event) => {
+    event.preventDefault();
+    onPress();
+  };
+
+  const release = (event) => {
+    event.preventDefault();
+    onRelease();
+  };
+
+  button.addEventListener('pointerdown', press);
+  button.addEventListener('pointerup', release);
+  button.addEventListener('pointercancel', release);
+  button.addEventListener('pointerleave', release);
+}
+
+bindHoldButton(
+  touchForwardButton,
+  () => { state.forwardHeld = true; },
+  () => { state.forwardHeld = false; }
+);
+
+bindHoldButton(
+  touchBackButton,
+  () => { state.backwardHeld = true; },
+  () => { state.backwardHeld = false; }
+);
+
 const initialCharacter = getSelectedCharacter();
 state.currentCharacter = initialCharacter;
 applyCharacterVisual(initialCharacter);

@@ -462,6 +462,44 @@ body {
   object-fit: cover;
 }
 
+.touch-controls {
+  display: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .touch-controls {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    justify-content: center;
+    gap: 22px;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .touch-button {
+    pointer-events: auto;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(15, 18, 32, 0.82);
+    color: var(--text);
+    font-size: 1.4rem;
+    box-shadow: 0 14px 30px rgba(2, 5, 18, 0.5);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+    user-select: none;
+  }
+
+  .touch-button:active {
+    background: rgba(78, 242, 255, 0.22);
+    border-color: rgba(78, 242, 255, 0.5);
+  }
+}
+
 @media (max-width: 768px) {
   body {
     padding: 12px;
@@ -476,5 +514,9 @@ body {
   .game-map {
     height: 68vh;
     min-height: 420px;
+  }
+
+  .game-shell {
+    padding-bottom: 100px;
   }
 }
