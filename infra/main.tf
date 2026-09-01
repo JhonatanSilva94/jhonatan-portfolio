@@ -8,15 +8,15 @@ terraform {
     }
   }
 
-  
-  backend "s3" {
+ backend "s3" {
   bucket = "jhonatanmoura-terraform-state"
   key    = "portfolio/terraform.tfstate"
   region = "us-east-1"
   }
-  
-  
+ 
 }
+
+
 provider "aws" {
   region = var.aws_region
 }
@@ -35,17 +35,19 @@ resource "aws_vpc" "portfolio" {
 }
 
 
+
 resource "aws_subnet" "portfolio" {
   vpc_id                  = aws_vpc.portfolio.id
   cidr_block              = var.subnet_cidr
   availability_zone       = var.availability_zone
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = true 
 
   tags = {
     Name    = "jhonatan-portfolio"
     Project = "jhonatan-portfolio"
   }
 }
+
 
 
 resource "aws_internet_gateway" "portfolio" {
@@ -58,11 +60,12 @@ resource "aws_internet_gateway" "portfolio" {
 }
 
 
+
 resource "aws_route_table" "portfolio" {
   vpc_id = aws_vpc.portfolio.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block = "0.0.0.0/0" # 
     gateway_id = aws_internet_gateway.portfolio.id
   }
 
@@ -83,10 +86,10 @@ resource "aws_route_table_association" "portfolio" {
 
 resource "aws_security_group" "portfolio" {
   name        = "sg_portfolio-jhonatan"
-  description = "Libera SSH (22) e HTTP (80) para o portfolio"
+  description = "Libera SSH (22) e HTTP (80) para o portfólio"
   vpc_id      = aws_vpc.portfolio.id
 
-
+  
   ingress {
     description = "SSH"
     from_port   = 22
@@ -95,7 +98,7 @@ resource "aws_security_group" "portfolio" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-
+  
   ingress {
     description = "HTTP"
     from_port   = 80
@@ -104,7 +107,7 @@ resource "aws_security_group" "portfolio" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-
+ 
   egress {
     from_port   = 0
     to_port     = 0
@@ -117,6 +120,28 @@ resource "aws_security_group" "portfolio" {
     Project = "jhonatan-portfolio"
   }
 }
+
+
+
+resource "aws_s3_bucket" "terraform_state" {
+  bucket = var.state_bucket_name
+
+  tags = {
+    Name    = "jhonatan-portfolio-terraform-state"
+    Project = "jhonatan-portfolio"
+  }
+}
+
+
+resource "aws_s3_bucket_versioning" "terraform_state" {
+  bucket = aws_s3_bucket.terraform_state.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+
 
 data "aws_eip" "existing" {
   public_ip = var.existing_elastic_ip
@@ -145,6 +170,9 @@ resource "aws_instance" "portfolio" {
     usermod -aG docker ubuntu
 
     git clone ${var.github_repo_url} /home/ubuntu/jhonatan-portfolio
+   
+    chown -R ubuntu:ubuntu /home/ubuntu/jhonatan-portfolio
+
     cd /home/ubuntu/jhonatan-portfolio
     docker build -t jhonatanmoura-portfolio:v1.0 .
     docker run -d -p 80:80 --name portfolio --restart unless-stopped jhonatanmoura-portfolio:v1.0
