@@ -15,5 +15,5 @@ output "vpc_id" {
 
 output "s3_state_bucket_name" {
   description = "Nome do bucket S3 criado para o state do Terraform"
-  value       = aws_s3_bucket.terraform_state.bucket
+  value       = var.state_bucket_name
 }

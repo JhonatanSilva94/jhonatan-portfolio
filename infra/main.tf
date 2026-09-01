@@ -118,28 +118,6 @@ resource "aws_security_group" "portfolio" {
   }
 }
 
-
-
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = var.state_bucket_name
-
-  tags = {
-    Name    = "jhonatan-portfolio-terraform-state"
-    Project = "jhonatan-portfolio"
-  }
-}
-
-
-resource "aws_s3_bucket_versioning" "terraform_state" {
-  bucket = aws_s3_bucket.terraform_state.id
-
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
-
-
-
 data "aws_eip" "existing" {
   public_ip = var.existing_elastic_ip
 }
