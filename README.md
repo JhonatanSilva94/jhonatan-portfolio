@@ -33,4 +33,11 @@ Vou colocar aqui o passo a passo da criação do projeto e como a infraestrutura
 - 4.5 — Teste do site no navegador
 
 ### 5️⃣ Estudo Terraform
-- 5.1 — ⏳ *loading...*
+- 5.1 — Instalação e preparação do ambiente local com Terraform
+- 5.2 — Criação do código do Terraform (Auxilio da Documentação e Claude)
+- 5.3 — Criação do Remote State (S3 Bucket separado da infra geral) para armazenamento dos arquivos .state
+- 5.4 — Destruição manual da infra e criação via Terraform
+- 5.5 — Teste com "apply" e "destroy" realizados juntamente com testes do site
+
+### 6️⃣ CI/CD (GitHub Actions)
+- 6.1 — ⏳ *loading...*

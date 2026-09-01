@@ -1,0 +1,29 @@
+name: Deploy da aplicação
+ 
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'frontend/**'
+      - 'projetos/**'
+      - 'Dockerfile'
+ 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Conectar na EC2 e atualizar a aplicação
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/jhonatan-portfolio
+            git pull origin main
+            docker build -t jhonatanmoura-portfolio:latest .
+            docker stop portfolio || true
+            docker rm portfolio || true
+            docker run -d -p 80:80 --name portfolio --restart unless-stopped jhonatanmoura-portfolio:latest
