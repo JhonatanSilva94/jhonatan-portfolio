@@ -59,9 +59,9 @@ updateActiveLink();
 // ==================== EFEITOS DE INTERATIVIDADE ==================== 
 
 // Adiciona efeito de glow ao passar o mouse em seções
-const sections = document.querySelectorAll('.subsection, .about, .contact');
+const glowSections = document.querySelectorAll('.subsection, .about, .contact');
 
-sections.forEach(section => {
+glowSections.forEach(section => {
   section.addEventListener('mouseenter', function () {
     this.style.boxShadow = '0 16px 60px rgba(78, 242, 255, 0.3)';
   });
@@ -91,5 +91,27 @@ const observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.subsection').forEach(el => {
   observer.observe(el);
 });
+
+// ==================== AJUSTE DINÂMICO DO ESPAÇO DA NAVBAR ====================
+// A navbar é fixa e no celular pode quebrar em mais linhas (marca + link do
+// repositório + links de navegação), então o espaço reservado precisa
+// acompanhar a altura real dela para não cobrir o conteúdo abaixo.
+const navbarEl = document.querySelector('.navbar');
+const mainContentEl = document.querySelector('.main-content');
+
+function adjustMainContentOffset() {
+  if (!navbarEl || !mainContentEl) return;
+  mainContentEl.style.paddingTop = `${navbarEl.offsetHeight + 24}px`;
+}
+
+window.addEventListener('load', adjustMainContentOffset);
+window.addEventListener('resize', adjustMainContentOffset);
+window.addEventListener('orientationchange', adjustMainContentOffset);
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(adjustMainContentOffset);
+}
+
+adjustMainContentOffset();
 
 console.log('✓ Portfolio script loaded');
