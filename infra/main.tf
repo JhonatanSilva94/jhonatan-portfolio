@@ -108,6 +108,13 @@ resource "aws_security_group" "portfolio" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    description = "HTTPS"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   egress {
     from_port   = 0
@@ -166,10 +173,18 @@ resource "aws_instance" "portfolio" {
 }
 
 
-
 resource "aws_eip_association" "portfolio" {
   instance_id   = aws_instance.portfolio.id
   allocation_id = data.aws_eip.existing.id
 }
 
-#Teste de CI/CD de Infra 2.0
+data "aws_route53_zone" "portfolio" {
+  name = var.domain_name
+}
+resource "aws_route53_record" "portfolio" {
+  zone_id = data.aws_route53_zone.portfolio.zone_id
+  name    = var.domain_name
+  type    = "A"
+  ttl     = 300
+  records = [var.existing_elastic_ip]
+}

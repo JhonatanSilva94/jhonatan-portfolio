@@ -26,4 +26,4 @@ jobs:
             docker build -t jhonatanmoura-portfolio:latest .
             docker stop portfolio || true
             docker rm portfolio || true
-            docker run -d -p 80:80 --name portfolio --restart unless-stopped jhonatanmoura-portfolio:latest
+            docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name portfolio --restart unless-stopped jhonatanmoura-portfolio:latest

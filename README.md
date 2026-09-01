@@ -40,4 +40,27 @@ Vou colocar aqui o passo a passo da criação do projeto e como a infraestrutura
 - 5.5 — Teste com "apply" e "destroy" realizados juntamente com testes do site
 
 ### 6️⃣ CI/CD (GitHub Actions)
-- 6.1 — ⏳ *loading...*
+- 6.1 — Criação do caminho de diretórios necessários pra criação dos 2 workflows e criação dos arquivos (deploy-app.yml e deploy-infra.yml)
+- 6.2 — Configuração e teste do deploy-app.yml atualizando a versão do site e verificando a disponibilidade
+- 6.3 — Configuração e teste do deploy-infra.yml atualizando a liberação de uma porta e verificando o funcionamento
+
+### 7️⃣ Route53 (jhonatanmoura.com)
+- 7.1 — Configuração do Route53 via Terraform pra apontar pro ip elástico da instância EC2
+- 7.2 — Teste na aplicação com todas as funcionalidades
+
+### 8️⃣ Configuração HTTPS
+- 8.1 — Configuração HTTPs via Certbot
+- 8.2 — Alteração do main.tf e do Dockerfile pra liberar a porta 443 da instância
+- 8.3 — Teste final da aplicação!!!
+
+### Finalizado ✅
+- Projeto completo: site portfólio + jogo (2000vibe) no ar, containerizado, provisionado via Terraform, com deploy automático via CI/CD e domínio próprio.
+
+
+## 🙏 Considerações finais
+
+Obrigado se acessou meu portfólio e leu até aqui. Apenas deixando claro: não sou expert em nenhuma das ferramentas usadas, apenas aproveitei pra ir estudando e tentando colocar em prática sobre mim. Usei documentações e IA pra me ajudar em alguns momentos.
+
+Nesse projeto, fui pausando a prática e estudando as ferramentas via aulas no portal da Udemy.com, seguindo este ciclo:
+
+**Estudo Git → Parte prática → Estudo Docker → Parte prática → Estudo Terraform → Parte prática → Estudo CI/CD → Parte prática** 

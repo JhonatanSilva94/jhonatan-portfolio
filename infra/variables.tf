@@ -57,3 +57,9 @@ variable "state_bucket_name" {
   type        = string
   default     = "jhonatanmoura-terraform-state"
 }
+
+variable "domain_name" {
+  description = "Domínio principal do portfólio"
+  type        = string
+  default     = "jhonatanmoura.com"
+}
