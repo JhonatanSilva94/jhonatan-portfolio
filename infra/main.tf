@@ -190,3 +190,5 @@ resource "aws_eip_association" "portfolio" {
   instance_id   = aws_instance.portfolio.id
   allocation_id = data.aws_eip.existing.id
 }
+
+# teste do pipeline de infra
