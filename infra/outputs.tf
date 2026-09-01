@@ -1,3 +1,4 @@
+
 output "instance_public_ip" {
   description = "IP público da EC2 (deve ser o Elastic IP reaproveitado)"
   value       = data.aws_eip.existing.public_ip
@@ -14,6 +15,6 @@ output "vpc_id" {
 }
 
 output "s3_state_bucket_name" {
-  description = "Nome do bucket S3 criado para o state do Terraform"
+  description = "Nome do bucket S3 usado para o state do Terraform (gerenciado separadamente em infra/bootstrap/)"
   value       = var.state_bucket_name
 }
