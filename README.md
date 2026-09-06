@@ -50,5 +50,5 @@ Esse é meu site portfólio, projeto onde busquei colocar em prática conceitos 
 
 
 ## 🙏 Considerações finais
-Página criada para centralizar um pouco da minha história até aqui e o motivo de estar voltando pra area de TI agora.
+Página criada para centralizar um pouco da minha história até aqui e o motivo de estar voltando pra area de TI agora
 Obrigado se acessou meu portfólio e leu até aqui.
