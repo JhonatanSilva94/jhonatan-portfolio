@@ -1,117 +1,106 @@
-// ==================== SMOOTH SCROLL ==================== 
+// ==================== SMOOTH SCROLL ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    
+
     const targetId = this.getAttribute('href');
-    
-    // Ignora se for apenas "#"
     if (targetId === '#') return;
-    
+
     const targetElement = document.querySelector(targetId);
-    
     if (targetElement) {
-      // Scroll suave nativo (melhor compatibilidade)
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-      
-      // Atualiza o histórico sem reload
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
       history.pushState(null, null, targetId);
     }
   });
 });
 
-// ==================== HIGHLIGHT DO LINK ATIVO ==================== 
-const sectionLinks = document.querySelectorAll('.section-link');
+// ==================== ABA ATIVA CONFORME SCROLL ====================
+const tabs = document.querySelectorAll('.tab');
 const sections = document.querySelectorAll('[id]');
 
-function updateActiveLink() {
+function updateActiveTab() {
   let currentSection = '';
-  
-  // Encontra qual seção está mais visível
+
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    
-    // Se a seção está visível (com margem de 150px para ativar antes)
     if (window.scrollY >= sectionTop - 150) {
       currentSection = section.getAttribute('id');
     }
   });
-  
-  // Atualiza classe ativa nos links
-  sectionLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${currentSection}`) {
-      link.classList.add('active');
-    }
+
+  tabs.forEach(tab => {
+    tab.classList.toggle('active', tab.getAttribute('href') === `#${currentSection}`);
   });
 }
 
-// Escuta scroll
-window.addEventListener('scroll', updateActiveLink);
+window.addEventListener('scroll', updateActiveTab);
+updateActiveTab();
 
-// Chama na carga da página
-updateActiveLink();
+// ==================== NOTIFICAÇÃO ESTILO MSN ====================
+const msnToast = document.getElementById('msn-toast');
+const msnAudio = document.getElementById('msn-audio');
+const msnCloseBtn = document.querySelector('.msn-toast-close');
+const msnOptionsBtn = document.querySelector('.msn-toast-options');
+let msnHideTimer = null;
 
-// ==================== EFEITOS DE INTERATIVIDADE ==================== 
+function isDesktopWidth() {
+  return window.innerWidth > 720;
+}
 
-// Adiciona efeito de glow ao passar o mouse em seções
-const glowSections = document.querySelectorAll('.subsection, .about, .contact');
+function hideMsnToast() {
+  if (msnToast) {
+    msnToast.classList.remove('show');
+  }
+}
 
-glowSections.forEach(section => {
-  section.addEventListener('mouseenter', function () {
-    this.style.boxShadow = '0 16px 60px rgba(78, 242, 255, 0.3)';
-  });
-  
-  section.addEventListener('mouseleave', function () {
-    this.style.boxShadow = '0 16px 50px rgba(2, 4, 12, 0.4)';
-  });
+// Navegadores bloqueiam áudio com som antes de qualquer interação do
+// usuário na página. Destrava a reprodução assim que a pessoa clicar,
+// tocar na tela ou apertar uma tecla pela primeira vez.
+let msnAudioUnlocked = false;
+
+function unlockMsnAudio() {
+  if (msnAudioUnlocked || !msnAudio) return;
+
+  msnAudio.play()
+    .then(() => {
+      msnAudio.pause();
+      msnAudio.currentTime = 0;
+      msnAudioUnlocked = true;
+    })
+    .catch(() => {
+      // Ainda bloqueado; tentará novamente no próximo gesto do usuário.
+    });
+}
+
+['click', 'keydown', 'touchstart', 'scroll'].forEach(evt => {
+  document.addEventListener(evt, unlockMsnAudio, { once: true, passive: true });
 });
 
-// ==================== SCROLL REVEAL (OPCIONAL) ==================== 
-// Anima elementos conforme entram em viewport (observador)
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -100px 0px'
-};
+function showMsnToast() {
+  if (!msnToast || !isDesktopWidth()) return;
 
-const observer = new IntersectionObserver(function(entries) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
+  msnToast.classList.add('show');
 
-// Observa subsections
-document.querySelectorAll('.subsection').forEach(el => {
-  observer.observe(el);
-});
+  if (msnAudio) {
+    msnAudio.currentTime = 0;
+    msnAudio.play().catch(() => {
+      // Reprodução bloqueada pelo navegador; ignora silenciosamente.
+    });
+  }
 
-// ==================== AJUSTE DINÂMICO DO ESPAÇO DA NAVBAR ====================
-// A navbar é fixa e no celular pode quebrar em mais linhas (marca + link do
-// repositório + links de navegação), então o espaço reservado precisa
-// acompanhar a altura real dela para não cobrir o conteúdo abaixo.
-const navbarEl = document.querySelector('.navbar');
-const mainContentEl = document.querySelector('.main-content');
-
-function adjustMainContentOffset() {
-  if (!navbarEl || !mainContentEl) return;
-  mainContentEl.style.paddingTop = `${navbarEl.offsetHeight + 24}px`;
+  clearTimeout(msnHideTimer);
+  msnHideTimer = setTimeout(hideMsnToast, 6000);
 }
 
-window.addEventListener('load', adjustMainContentOffset);
-window.addEventListener('resize', adjustMainContentOffset);
-window.addEventListener('orientationchange', adjustMainContentOffset);
+if (msnToast) {
+  if (msnCloseBtn) {
+    msnCloseBtn.addEventListener('click', hideMsnToast);
+  }
 
-if (document.fonts && document.fonts.ready) {
-  document.fonts.ready.then(adjustMainContentOffset);
+  if (msnOptionsBtn) {
+    msnOptionsBtn.addEventListener('click', hideMsnToast);
+  }
+
+  setTimeout(showMsnToast, 5000);
+  setInterval(showMsnToast, 120000);
 }
-
-adjustMainContentOffset();
-
-console.log('✓ Portfolio script loaded');

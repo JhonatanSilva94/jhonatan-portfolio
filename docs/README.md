@@ -1,3 +1,0 @@
-📚 docs/
-
-Fluxograma do projeto.
