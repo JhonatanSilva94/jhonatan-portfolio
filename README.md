@@ -1,12 +1,12 @@
 jhonatanmoura.com 🌐
 
-Esse é meu site portfólio, projeto onde busquei colocar em prática conceitos e ferramentas que estou estudando:
+Esse é meu site portfólio, com estilo do Orkut, onde busquei colocar em prática conceitos e ferramentas que estou estudando:
 
 - **Git & GitHub** - Repositório e versionamento do código
 - **Docker** - Criação da imagem e do container dentro de uma instância EC2 na AWS
 - **Terraform** - Criação e configuração de todo o ambiente via código na AWS (IaC)
 - **CI/CD** - GitHub Actions pra esteira de deploy
-- **AWS** - Todo o projeto está rodando na AWS 
+- **AWS** - Todo o projeto está rodando na AWS
 
 
 🚀 Passo a passo de implantação/revisão
@@ -50,5 +50,5 @@ Esse é meu site portfólio, projeto onde busquei colocar em prática conceitos 
 
 
 ## 🙏 Considerações finais
-Página criada para centralizar um pouco da minha história até aqui e o motivo de estar voltando pra area de TI agora
+Página criada para centralizar um pouco da minha história até aqui e o motivo de estar voltando pra area de TI agora.
 Obrigado se acessou meu portfólio e leu até aqui.
