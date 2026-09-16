@@ -102,5 +102,5 @@ if (msnToast) {
   }
 
   setTimeout(showMsnToast, 5000);
-  setInterval(showMsnToast, 120000);
+  setInterval(showMsnToast, 60000);
 }
