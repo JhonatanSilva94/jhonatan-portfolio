@@ -16,7 +16,9 @@ systemctl enable docker
 usermod -aG docker ubuntu
 
 # Clona o repositório e sobe a aplicação
-git clone -b new-portfolio https://github.com/JhonatanSilva94/jhonatan-portfolio.git /home/ubuntu/jhonatan-portfolio
+git clone -b main https://github.com/JhonatanSilva94/jhonatan-portfolio.git /home/ubuntu/jhonatan-portfolio
+chown -R ubuntu:ubuntu /home/ubuntu/jhonatan-portfolio
+sudo -u ubuntu git config --global --add safe.directory /home/ubuntu/jhonatan-portfolio
 cd /home/ubuntu/jhonatan-portfolio
 docker build -t jhonatanmoura-portfolio .
-docker run -d -p 80:80 --name portfolio jhonatanmoura-portfolio:latest
+docker run -d -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro --name portfolio jhonatanmoura-portfolio:latest
