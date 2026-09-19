@@ -3,206 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jhonatan - Portfolio</title>
+  <title>Jhonatan Silva — Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page">
 
-    <!-- Barra de utilidades (topo) -->
-    <div class="topbar">
-      <div class="topbar-inner">
-        <span class="topbar-status">🟢 perfil ativo</span>
-        <div class="topbar-links">
-          <a href="assets/cv.pdf">📄 baixar currículo</a>
-          <a href="https://github.com/JhonatanSilva94/jhonatan-portfolio" target="_blank">💾 código-fonte</a>
+    <!-- Cabeçalho -->
+    <header class="nav">
+      <div class="nav-inner">
+        <div class="brand">
+          <span class="brand-name">Jhonatan Silva</span>
+          <span class="brand-role">DevOps &amp; Cloud</span>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#sobre" class="nav-link">Sobre</a>
+          <a href="#formacao" class="nav-link">Formação</a>
+          <a href="#esports" class="nav-link">eSports</a>
+          <a href="#retorno" class="nav-link">Retorno</a>
+          <a href="#contato" class="nav-link">Contato</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="https://www.linkedin.com/in/jhonatanmoura/" target="_blank" rel="noopener" class="nav-action nav-action-filled">LinkedIn ↗</a>
+          <a href="https://github.com/JhonatanSilva94/jhonatan-portfolio" target="_blank" rel="noopener" class="nav-action nav-action-filled">GitHub ↗</a>
+          <a href="assets/cv.pdf" class="nav-action nav-action-filled">Currículo ↗</a>
         </div>
       </div>
-    </div>
-
-    <!-- Cabeçalho com "logo" e abas -->
-    <header class="orkut-header">
-      <div class="orkut-header-inner">
-        <div class="logo">Jhonatan</div>        
-      </div>
-
-      <nav class="tabs">
-        <a href="#inicio" class="tab">Início</a>
-        <a href="#sobre" class="tab">Sobre</a>
-        <a href="#formacao" class="tab">Formação</a>
-        <a href="#esports" class="tab">Carreira nos eSports</a>
-        <a href="#retorno" class="tab">Retorno</a>
-        <a href="#contato" class="tab">Contato</a>
-      </nav>
     </header>
 
-    <div class="profile-layout" id="inicio">
-      <!-- Coluna lateral esquerda -->
-      <aside class="side-col sidebar-left">
-        <div class="widget">
-          <div class="widget-title">Foto do perfil</div>
-          <div class="widget-body photo-widget-body">
-            <img src="assets/jhonatan.png" alt="Foto de Jhonatan" class="profile-photo">
-          </div>
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <h1 class="hero-title">
+        Ex-atleta profissional.
+      </h1>
+
+      <div class="hero-sub">
+        <p class="hero-role">DevOps &amp; Infraestrutura em nuvem (AWS). Disponível para oportunidades.</p>
+        <p class="hero-note">Ex-jogador profissional de Counter-Strike. Formado em Ciência da Computação.</p>
+      </div>
+
+      <div class="mockup">
+        <div class="mockup-bar">
+          <span class="mockup-dot mockup-dot-red"></span>
+          <span class="mockup-dot mockup-dot-yellow"></span>
+          <span class="mockup-dot mockup-dot-green"></span>
+          <span class="mockup-filename">trajetoria.sh</span>
         </div>
+        <pre class="mockup-body"><code><span class="mockup-prompt">$</span> whoami
+jhonatan — devops &amp; cloud infra
 
-        <div class="widget">
-          <div class="widget-title">Informações</div>
-          <div class="widget-body">
-            <table class="retro-table compact">
-              <tbody>
-                <tr><th>Idade</th><td>32 anos</td></tr>
-                <tr><th>Área atual</th><td>DevOps / Infraestrutura / AWS</td></tr>
-                <tr><th>Antes disso</th><td>eSports</td></tr>
-                <tr><th>Status</th><td>🟢 Disponível para oportunidades</td></tr>
-              </tbody>
-            </table>
-          </div>
+<span class="mockup-prompt">$</span> cat formacao.txt
+Ciência da Computação — UNIFIEO (2015)
+AWS Certified AI Practitioner
+AWS Certified Cloud Practitioner
+
+<span class="mockup-prompt">$</span> history | grep esports
+8 anos como jogador profissional de CS, campeão nacional</code></pre>
+      </div>
+
+      <a href="#sobre" class="scroll-cue" aria-label="Rolar para a seção Sobre">↓</a>
+    </section>
+
+    <main>
+      <section id="sobre" class="section">
+        <div class="section-head">
+          <span class="section-index">01</span>
+          <h2 class="section-title">Sobre</h2>
         </div>
-
-        <div class="widget">
-          <div class="widget-title">Contato</div>
-          <div class="widget-body contact-buttons">
-            <a href="https://www.linkedin.com/in/jhonatanmoura/" target="_blank" class="retro-button">🔗 LinkedIn</a>
-            <a href="mailto:jsm_jhonatan@hotmail.com" class="retro-button">✉️ E-mail</a>
-            <a href="https://www.instagram.com/jntcs2/" target="_blank" class="retro-button">📸 Instagram</a>
-          </div>
+        <div class="section-body section-body-with-photo">
+          <img src="assets/jhonatan.png" alt="Foto de Jhonatan" class="about-photo">
+          <p>
+            Meu nome é Jhonatan, atualmente tenho 32 anos, e estou em busca de retorno à área de TI. Por 8 anos estive em outra área de atuação, sendo jogador profissional de Counter-Strike e, posteriormente, treinador.
+          </p>
         </div>
-      </aside>
+      </section>
 
-      <!-- Coluna principal -->
-      <main class="profile-main">
-        <section id="sobre" class="widget">
-          <div class="widget-title">Quem sou eu</div>
-          <div class="widget-body">
-            <p>
-              Meu nome é Jhonatan, atualmente tenho 32 anos, e estou em busca de retorno à área de TI. Por 8 anos estive em outra área de atuação, sendo jogador profissional de Counter-Strike e, posteriormente, treinador.
-            </p>
+      <section id="formacao" class="section">
+        <div class="section-head">
+          <span class="section-index">02</span>
+          <h2 class="section-title">Formação</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            Sou formado em Ciência da Computação pela UNIFIEO (12/2015), trabalhei com servidores web e inovação, com o propósito de buscar tecnologias que pudessem alavancar a infraestrutura da empresa.
+          </p>
+          <p>Hoje possuo 2 certificações tiradas em Agosto/2026, ambas de nível Practitioner da AWS:</p>
+          <div class="tag-list">
+            <span class="tag">AWS Certified AI Practitioner</span>
+            <span class="tag">AWS Certified Cloud Practitioner</span>
           </div>
-        </section>
+          <p class="section-footnote">
+            Mais informações sobre experiências podem ser verificadas no currículo, disponível para download no topo da página.
+          </p>
+        </div>
+      </section>
 
-        <section id="formacao" class="widget">
-          <div class="widget-title">Formação</div>
-          <div class="widget-body">
-            <p>
-              Sou formado em Ciência da Computação pela UNIFIEO (12/2015), trabalhei com servidores web e no time de inovação da última empresa em que atuei, com o propósito de buscar tecnologias e ferramentas que pudessem auxiliar a equipe no dia a dia (Git, Jenkins e AWS).
-            </p>
-            <p>
-              Hoje possuo 2 certificações tiradas em Agosto/2026, ambas de nível Practitioner da AWS:
-            </p>
-            <ul class="certifications-list">
-              <li>AWS Certified AI Practitioner</li>
-              <li>AWS Certified Cloud Practitioner</li>
-            </ul>
-            <p>
-              E 1 certificação vencida, tirada antes de mudar de área:
-            </p>
-            <ul class="certifications-list">
-              <li>AWS Certified Solutions Architect – Associate (12/2017 – 12/2019)</li>
-            </ul>
-            <p>
-              Mais informações sobre experiências podem ser verificadas no currículo, disponível para download no topo da página.
-            </p>
-          </div>
-        </section>
+      <section id="esports" class="section">
+        <div class="section-head">
+          <span class="section-index">03</span>
+          <h2 class="section-title">Carreira nos eSports</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            Em dezembro de 2017, recebi uma proposta para virar jogador profissional de Counter-Strike, jogo que fez parte da minha infância e da minha adolescência.
+          </p>
+          <p>
+            Na época, com 23 anos e Analista Pleno, decidi me arriscar e cair de cabeça. Nunca tinha andado de avião na vida, de repente estava viajando o mundo em um ritmo insano.
+          </p>
+          <p>
+            Viajei o mundo jogando os maiores campeonatos da modalidade, e venci diversos torneios nacionais.
+          </p>
 
-        <section id="esports" class="widget">
-          <div class="widget-title">Carreira nos eSports</div>
-          <div class="widget-body">
-            <p>
-              Em dezembro de 2017, recebi uma proposta para virar jogador profissional de Counter-Strike. Uma coisa que não mencionei ainda: em certa época da minha vida, fiz faculdade, trabalhei e treinei, tudo pela paixão que tinha pelo jogo (Esse que fez parte da minha infância).
-            </p>
-            <p>
-              Na época, com 23 anos e Analista Pleno, decidi me arriscar e cair de cabeça. Nunca tinha andado de avião na vida, de repente estava viajando o mundo em um ritmo insano.
-            </p>
-            <p>
-              Viajei o mundo com rotinas de treino de 12 horas diárias (treino em equipe, individual, psicólogo etc.), joguei os maiores campeonatos do mundo e ganhei diversos campeonatos nacionais.
-            </p>
-            <table class="retro-table">
-              <tbody>
-                <tr><th>Países que morei</th><td>EUA, Portugal e Sérvia</td></tr>
-                <tr><th>Países que visitei</th><td>México, Inglaterra, Alemanha, Dinamarca, Suécia, Hungria, Emirados Árabes Unidos, Espanha, Cazaquistão, China e Austrália</td></tr>
-              </tbody>
-            </table>
-            <p>
-              Mas esse ano, decidi que tudo que vivi (e sou muito grato) deveria ficar para trás, e eu precisava recomeçar.
-            </p>
-          </div>
-        </section>
-
-        <section id="retorno" class="widget">
-          <div class="widget-title">Retorno</div>
-          <div class="widget-body">
-            <p>
-              <strong>Por que eu decidi voltar?</strong>
-            </p>
-            <p>
-              Sou uma pessoa que sempre pensa alguns anos à frente. Em 2017, com 23 anos, eu me imaginava aos 30 tendo ganhado diversos campeonatos mundiais e sendo um dos melhores do mundo. Infelizmente essa parte não aconteceu, mas conquistei muita coisa e vivi tanto que daria um livro estilo Game of Thrones (sem aquele final que é um delírio coletivo).
-            </p>
-            <p>
-              Hoje, com 32, não me vejo com 40 anos ainda no mundo dos eSports. Mas consigo me ver um profissional de sucesso na área de TI.
-            </p>
-            <p>
-              Obrigado se você leu até aqui, agora você conhece um pouco da minha história. Se quiser bater um papo, sinta-se à vontade para entrar em contato comigo.
-            </p>
-          </div>
-        </section>
-
-        <section id="contato" class="widget">
-          <div class="widget-title">Contato</div>
-          <div class="widget-body contact-buttons">
-            <a href="https://www.linkedin.com/in/jhonatanmoura/" target="_blank" class="retro-button">🔗 LinkedIn</a>
-            <a href="mailto:jsm_jhonatan@hotmail.com" class="retro-button">✉️ E-mail</a>
-            <a href="https://www.instagram.com/jntcs2/" target="_blank" class="retro-button">📸 Instagram</a>
-          </div>
-        </section>
-      </main>
-
-      <!-- Coluna lateral direita -->
-      <aside class="side-col sidebar-right">
-        <section id="comunidades" class="widget">
-          <div class="widget-title">minhas comunidades (1)</div>
-          <div class="widget-body">
-            <div class="community-grid">
-              <div class="community-item">
-                <img src="assets/sorteve.png" alt="Comunidade Queria sorvete, mas era feijão">
-                <span class="community-name">Queria sorvete, mas era feijão</span>
-                <span class="community-members">1.345.056 membros</span>
-              </div>
+          <dl class="stat-grid">
+            <div class="stat-item">
+              <dt>Países que morei</dt>
+              <dd>EUA, Portugal e Sérvia</dd>
             </div>
-          </div>
-        </section>
-      </aside>
-    </div>
+            <div class="stat-item">
+              <dt>Países que visitei</dt>
+              <dd>México, Inglaterra, Alemanha, Dinamarca, Suécia, Hungria, Emirados Árabes Unidos, Espanha, Cazaquistão, China e Austrália</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
 
-    <footer class="page-footer">
-      <p>Design inspirado no saudoso Orkut (2004-2014)</p>
+      <section id="retorno" class="section">
+        <div class="section-head">
+          <span class="section-index">04</span>
+          <h2 class="section-title">Retorno</h2>
+        </div>
+        <div class="section-body">
+          <p><strong>Por que eu decidi voltar?</strong></p>
+          <p>
+            Sou uma pessoa que sempre pensa alguns anos à frente. Em 2017, com 23 anos, eu me imaginava aos 30 sendo um atleta de sucesso dentro dos eSports, o que aconteceu em nível nacional.
+          </p>
+          <p>
+            Hoje, com 32, não me vejo com 40 anos ainda no mundo dos eSports. Mas consigo me ver um profissional de sucesso na área de Tecnologia.
+          </p>
+          <p>
+            Obrigado se você leu até aqui, agora você conhece um pouco da minha história. Se quiser bater um papo, sinta-se à vontade para entrar em contato comigo.
+          </p>
+        </div>
+      </section>
+
+      <section id="contato" class="section">
+        <div class="section-head">
+          <span class="section-index">05</span>
+          <h2 class="section-title">Contato</h2>
+        </div>
+        <div class="section-body">
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/jhonatanmoura/" target="_blank" rel="noopener" class="contact-link">LinkedIn ↗</a>
+            <a href="mailto:jsm_jhonatan@hotmail.com" class="contact-link">E-mail ↗</a>
+            <a href="https://www.instagram.com/jntcs2/" target="_blank" rel="noopener" class="contact-link">Instagram ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Jhonatan Silva — Portfólio pessoal</p>
     </footer>
   </div>
-
-  <!-- Notificação estilo Windows Live Messenger -->
-  <div id="msn-toast" class="msn-toast" role="status" aria-live="polite">
-    <div class="msn-toast-titlebar">
-      <svg class="msn-toast-titlebar-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-        <circle cx="8" cy="8" r="8" fill="#3a6ea5"></circle>
-        <circle cx="8" cy="6.3" r="2.6" fill="#fff"></circle>
-        <path d="M3 14c0-3 2.2-5 5-5s5 2 5 5" fill="#fff"></path>
-      </svg>
-      <span class="msn-toast-title">Windows Live Messenger</span>
-      <button type="button" class="msn-toast-close" aria-label="Fechar notificação">✕</button>
-    </div>
-    <div class="msn-toast-content">
-      <img src="assets/jhonatan.png" alt="" class="msn-toast-avatar">
-      <div class="msn-toast-info">
-        <span class="msn-toast-name">Jhonatan</span>
-        <span class="msn-toast-status">acabou de ficar online.</span>
-      </div>
-    </div>
-    <div class="msn-toast-footer">
-      <button type="button" class="msn-toast-options">Opções</button>
-    </div>
-  </div>
-  <audio id="msn-audio" src="assets/msn.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
