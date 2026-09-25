@@ -1,48 +1,27 @@
-jhonatanmoura.com 🌐
+# jhonatanmoura.com 🌐
 
-Esse é meu site portfólio, onde busquei colocar em prática conceitos e ferramentas que estou estudando:
+Site portfólio pessoal, onde coloco em prática conceitos e ferramentas que estou estudando para meu retorno à área de TI.
 
-- **Git & GitHub** - Repositório e versionamento do código
-- **Docker** - Criação da imagem e do container dentro de uma instância EC2 na AWS
-- **Terraform** - Criação e configuração de todo o ambiente via código na AWS (IaC)
-- **CI/CD** - GitHub Actions pra esteira de deploy
-- **AWS** - Todo o projeto está rodando na AWS utilizando VPC, subnet, IGW e EC2
+🔗 https://jhonatanmoura.com
 
+## Passo a passo
 
-🚀 Passo a passo
+1. Git e GitHub — implantação e versionamento do código
+2. Frontend — codificação com apoio do Claude Code
+3. Docker (estudo inicial) — criação do Dockerfile, build e teste do container em ambiente local
+4. Infraestrutura manual na AWS — ambiente criado na região us-east-1 (por questões de custo);
+5. Terraform — instalação e preparação do ambiente local; criação do código (com apoio de documentação e do Claude); destruição da infra manual e recriação via Terraform
+6. CI/CD (GitHub Actions) — criação do deploy-app.yml; teste do deploy automático, atualizando a versão do site e verificando a disponibilidade
+7. Route53 — configuração do domínio via Terraform, apontando para o IP elástico da instância EC2; teste final do portfólio
+8. Migração para S3 + CloudFront — infraestrutura antiga (Docker, EC2, VPC, Elastic IP) removida e destruída via Terraform; site passou a ser servido por S3 + CloudFront; pipeline de CI/CD atualizado para sincronizar direto com o S3.
 
-### 1️⃣ Revisão Git/GitHub
-- 1.1 — Implantação do Git/GitHub pro código
+## Tecnologias Atuais do projeto
 
-### 2️⃣ Frontend
-- 2.1 — Uso do Claude Code para codificação
-- 2.2 — Teste do ambiente na máquina local
+* AWS: S3, CloudFront e Route 53
+* Versionamento: Git e GitHub
+* Infraestrutura como código: Terraform
+* CI/CD: GitHub Actions
 
-### 3️⃣ Estudo Docker
-- 3.1 — Criação do Dockerfile
-- 3.2 — Criação da imagem e teste da aplicação em container local
+## Considerações finais
 
-### 4️⃣ Criação da Infra manualmente na AWS
-- 4.1 — Criação do ambiente manualmente na AWS (Criado na região us-east-1 para fins de custos)
-- 4.2 — Componentes criados na ordem: VPC → Subnet pública → Route Table → Internet Gateway → Instância EC2 (Ubuntu Linux)
-- 4.3 — Instalação do Git e do Docker na instância
-- 4.4 — Clone do repositório, criação da imagem e execução do container
-- 4.5 — Teste do portifólio online
-
-### 5️⃣ Estudo Terraform
-- 5.1 — Instalação e preparação do ambiente local com Terraform
-- 5.2 — Criação do código do Terraform (Auxilio da Documentação e Claude)
-- 5.3 — Destruição manual da infra e criação via Terraform
-
-### 6️⃣ CI/CD (GitHub Actions)
-- 6.1 — Criação dos arquivos (deploy-app.yml)
-- 6.2 — Configuração e teste do deploy-app.yml atualizando a versão do site e verificando a disponibilidade
-
-### 7️⃣ Route53 (jhonatanmoura.com)
-- 7.1 — Configuração do Route53 via Terraform pra apontar pro ip elástico da instância EC2
-- 7.2 — Teste final do portfólio
-
-
-## 🙏 Considerações finais
-Página criada para centralizar um pouco da minha história até aqui e o motivo de estar voltando pra area de TI agora.
-Obrigado se acessou meu portfólio e leu até aqui.
+Página criada para centralizar um pouco da minha história até aqui e o motivo de estar voltando para a área de TI agora. Obrigado se acessou meu portfólio e leu até aqui.
