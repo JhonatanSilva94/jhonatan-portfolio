@@ -3,191 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jhonatan Silva — Portfólio</title>
+  <title>Jhonatan Silva, Cloud &amp; DevOps</title>
+  <meta name="description" content="Analista de Infraestrutura Cloud na empresa Darede, com foco em AWS, Observabilidade e IA. Ex-atleta profissional e treinador de Counter-Strike.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page">
 
-    <!-- Cabeçalho -->
-    <header class="nav">
-      <div class="nav-inner">
-        <div class="brand">
-          <span class="brand-name">Jhonatan Silva</span>
-          <span class="brand-role">AWS &amp; DevOps</span>
-        </div>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#inicio" class="brand" aria-label="jnt, voltar ao início">jnt</a>
 
-        <nav class="nav-links">
-          <a href="#sobre" class="nav-link">Sobre</a>
-          <a href="#formacao" class="nav-link">Formação</a>
-          <a href="#esports" class="nav-link">eSports</a>
-          <a href="#retorno" class="nav-link">Retorno</a>
-          <a href="#contato" class="nav-link">Contato</a>
-        </nav>
+      <nav class="nav-links" aria-label="Seções">
+        <a href="#inicio" class="nav-link">Home</a>
+        <a href="#certificacoes" class="nav-link">Certificações</a>
+        <a href="#trajetoria" class="nav-link">Trajetória</a>
+        <a href="#contato" class="nav-link">Contato</a>
+        <a href="projetos.html" class="nav-link">Projetos</a>
+      </nav>
 
-        <div class="nav-actions">
-          <a href="https://www.linkedin.com/in/jhonatanmoura/" target="_blank" rel="noopener" class="nav-action nav-action-filled">LinkedIn ↗</a>
-          <a href="https://github.com/JhonatanSilva94/jhonatan-portfolio" target="_blank" rel="noopener" class="nav-action nav-action-filled">GitHub ↗</a>
-          <a href="assets/cv.pdf" class="nav-action nav-action-filled">Currículo ↗</a>
-        </div>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/jhonatanmoura/" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://github.com/JhonatanSilva94" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
       </div>
-    </header>
+    </div>
+  </header>
+
+  <main>
 
     <!-- Hero -->
     <section class="hero" id="inicio">
-      <h1 class="hero-title">
-        Analista de Infraestrutura Cloud
-      </h1>
-
-      <div class="hero-sub">
-        <p class="hero-role">AWS &amp; DevOps</p>
-        <p class="hero-note">Ex-atleta profissional de Counter-Strike. Formado em Ciência da Computação.</p>
-      </div>
-
-      <div class="mockup">
-        <div class="mockup-bar">
-          <span class="mockup-dot mockup-dot-red"></span>
-          <span class="mockup-dot mockup-dot-yellow"></span>
-          <span class="mockup-dot mockup-dot-green"></span>
-          <span class="mockup-filename">trajetoria.sh</span>
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-name">Jhonatan<br>Silva</h1>
+          <p class="hero-lead">
+            Analista de Infraestrutura Cloud na empresa Darede, com foco em AWS, Observabilidade e IA.
+            Ex-atleta profissional e treinador de <span class="nowrap">Counter-Strike</span>.
+          </p>
         </div>
-        <pre class="mockup-body"><code><span class="mockup-prompt">$</span> whoami
-jhonatan — aws &amp; devops
 
-<span class="mockup-prompt">$</span> cat formacao.txt
-Ciência da Computação — UNIFIEO (2015)
-AWS Certified Solutions Architect - Associate
-AWS Certified AI Practitioner
-AWS Certified Cloud Practitioner
-
-<span class="mockup-prompt">$</span> history | grep esports
-8 anos como jogador profissional de CS, campeão nacional</code></pre>
+        <figure class="hero-photo">
+          <img src="assets/web/jhonatan.jpg" alt="Retrato de Jhonatan Silva" width="553" height="569">
+        </figure>
       </div>
 
-      <a href="#sobre" class="scroll-cue" aria-label="Rolar para a seção Sobre">↓</a>
+      <!-- Linha do tempo: cada trecho tem largura proporcional à duração -->
+      <div class="wrap">
+        <ol class="career" aria-label="Linha do tempo da carreira">
+          <li class="career-seg seg-tech" style="--years: 6">
+            <span class="career-when">2012–2018</span>
+            <span class="career-what">Computação e infra</span>
+          </li>
+          <li class="career-seg seg-player" style="--years: 6">
+            <span class="career-when">2018–2024</span>
+            <span class="career-what">Jogador profissional de <span class="nowrap">Counter-Strike</span></span>
+          </li>
+          <li class="career-seg seg-coach" style="--years: 2">
+            <span class="career-when">2024–2026</span>
+            <span class="career-what">Treinador de <span class="nowrap">Counter-Strike</span></span>
+          </li>
+          <li class="career-seg seg-cloud" style="--years: 2">
+            <span class="career-when">Hoje</span>
+            <span class="career-what">Cloud na empresa Darede</span>
+            <span class="career-now" aria-hidden="true"></span>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <main>
-      <section id="sobre" class="section">
-        <div class="section-head">
-          <span class="section-index">01</span>
-          <h2 class="section-title">Sobre</h2>
+    <!-- Certificações -->
+    <section class="section certs-section" id="certificacoes">
+      <div class="wrap">
+        <div class="certs">
+          <h2 class="certs-title">Certificações</h2>
+          <img src="assets/badges/aws.png" alt="Amazon Web Services" class="certs-logo" width="1024" height="900">
+          <ul class="cert-badges">
+            <li>
+              <a href="https://www.credly.com/earner/earned/badge/753cb46d-b56b-4fee-8ff4-ec7b52a73b89" target="_blank" rel="noopener" class="cert-badge" title="Ver credencial na Credly">
+                <img src="assets/badges/aws-certified-solutions-architect-associate.png" alt="AWS Certified Solutions Architect, Associate (ver credencial na Credly)" width="150" height="150">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.credly.com/earner/earned/badge/083acf94-df9e-4b06-bec3-3e3fb1c3847a" target="_blank" rel="noopener" class="cert-badge" title="Ver credencial na Credly">
+                <img src="assets/badges/aws-certified-ai-practitioner.png" alt="AWS Certified AI Practitioner, Foundational (ver credencial na Credly)" width="150" height="150">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.credly.com/earner/earned/badge/aeb9b5ed-9fb6-45f4-8758-6aebb8c4855d" target="_blank" rel="noopener" class="cert-badge" title="Ver credencial na Credly">
+                <img src="assets/badges/aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner, Foundational (ver credencial na Credly)" width="150" height="150">
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="section-body section-body-with-photo">
-          <img src="assets/jhonatan.png" alt="Foto de Jhonatan" class="about-photo">
-          <p>
-            Meu nome é Jhonatan, atualmente tenho 32 anos, sou Analista de Infraestrutura Cloud na empresa Darede. Por 8 anos estive em outra área de atuação, sendo jogador profissional de Counter-Strike e, posteriormente, treinador.
-          </p>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="formacao" class="section">
-        <div class="section-head">
-          <span class="section-index">02</span>
-          <h2 class="section-title">Formação</h2>
-        </div>
-        <div class="section-body">
-          <p>
-            Sou formado em Ciência da Computação pela UNIFIEO (12/2015), trabalhei com servidores web e inovação, com o propósito de buscar tecnologias que pudessem alavancar a infraestrutura da empresa.
-          </p>
-          <p>Hoje possuo 3 certificações da AWS tiradas em 2026, 2 de nível Practitioner e 1 de nível Associate:</p>
-          <div class="tag-list">
-            <span class="tag">AWS Certified Solutions Architect - Associate</span>
-            <span class="tag">AWS Certified AI Practitioner</span>
-            <span class="tag">AWS Certified Cloud Practitioner</span>
+    <!-- Trajetória -->
+    <section class="section story" id="trajetoria">
+      <div class="wrap">
+        <h2 class="section-title">Antes da nuvem</h2>
+        <p class="section-lead">Oito anos no cenário competitivo de <span class="nowrap">Counter-Strike</span>, como jogador e depois como treinador.</p>
+
+        <article class="chapter">
+          <span class="chapter-year">2015</span>
+          <div class="chapter-body">
+            <h3 class="chapter-title">Ciência da Computação</h3>
+            <p>
+              Me formei pela UNIFIEO em dezembro de 2015 e fui trabalhar com servidores web e inovação
+              na área de tecnologia.
+            </p>
           </div>
-          <p class="section-footnote">
-            Mais informações sobre experiências podem ser verificadas no currículo, disponível para download no topo da página.
-          </p>
-        </div>
-      </section>
+        </article>
 
-      <section id="esports" class="section">
-        <div class="section-head">
-          <span class="section-index">03</span>
-          <h2 class="section-title">Carreira nos eSports</h2>
-        </div>
-        <div class="section-body">
-          <p>
-            Em dezembro de 2017, recebi uma proposta para virar jogador profissional de Counter-Strike, jogo que fez parte da minha infância e da minha adolescência.
-          </p>
-          <p>
-            Na época, com 23 anos e Analista Pleno, decidi me arriscar e cair de cabeça. Nunca tinha andado de avião na vida, de repente estava viajando o mundo em um ritmo insano.
-          </p>
-          <p>
-            Viajei o mundo jogando os maiores campeonatos da modalidade, e venci diversos torneios nacionais.
-          </p>
+        <article class="chapter">
+          <span class="chapter-year">2017</span>
+          <div class="chapter-body">
+            <h3 class="chapter-title">A proposta</h3>
+            <p>
+              Em dezembro de 2017 recebi uma proposta para virar jogador profissional de <span class="nowrap">Counter-Strike</span>,
+              o jogo que fez parte da minha infância e da minha adolescência.
+            </p>
+            <p>
+              Eu tinha 23 anos e era Analista Pleno. Decidi arriscar e cair de cabeça.
+              Nunca tinha andado de avião, e de repente estava viajando o mundo num ritmo insano.
+            </p>
+          </div>
+        </article>
+      </div>
 
-          <div class="countries">
-            <div class="countries-group">
-              <span class="countries-label">Países que morei</span>
-              <div class="tag-list">
-                <span class="tag tag-lived">Estados Unidos</span>
-                <span class="tag tag-lived">Portugal</span>
-                <span class="tag tag-lived">Sérvia</span>
-              </div>
+      <figure class="wide-photo">
+        <img src="assets/web/jogador-01.jpg" alt="Jhonatan concentrado durante uma partida, de headset, em frente ao monitor" width="2000" height="1333" loading="lazy">
+        <figcaption class="wrap">Concentração em partida oficial. Foto: HLTV</figcaption>
+      </figure>
+
+      <div class="wrap">
+        <div class="split">
+          <figure class="photo photo-tilt-left">
+            <img src="assets/web/jogador-02.jpg" alt="Jhonatan comemorando uma rodada com os braços erguidos" width="462" height="641" loading="lazy">
+          </figure>
+
+          <div class="split-text">
+            <h3 class="chapter-title">Seis anos no servidor</h3>
+            <p>
+              Joguei os maiores campeonatos da modalidade e venci diversos torneios nacionais.
+              No caminho, morei em três países e passei por mais onze.
+            </p>
+
+            <div class="places">
+              <p class="places-count"><strong>14</strong> países</p>
+              <dl class="places-list">
+                <dt>Morei</dt>
+                <dd>Estados Unidos, Portugal e Sérvia</dd>
+                <dt>Visitei</dt>
+                <dd>México, Inglaterra, Alemanha, Dinamarca, Suécia, Hungria, Emirados Árabes Unidos, Espanha, Cazaquistão, China e Austrália</dd>
+              </dl>
             </div>
-            <div class="countries-group">
-              <span class="countries-label">Países que visitei</span>
-              <div class="tag-list">
-                <span class="tag">México</span>
-                <span class="tag">Inglaterra</span>
-                <span class="tag">Alemanha</span>
-                <span class="tag">Dinamarca</span>
-                <span class="tag">Suécia</span>
-                <span class="tag">Hungria</span>
-                <span class="tag">Emirados Árabes Unidos</span>
-                <span class="tag">Espanha</span>
-                <span class="tag">Cazaquistão</span>
-                <span class="tag">China</span>
-                <span class="tag">Austrália</span>
-              </div>
+          </div>
+        </div>
+
+        <div class="coach">
+          <div class="coach-text">
+            <h3 class="chapter-title">Treinador</h3>
+            <p>
+              Depois de seis anos como jogador, decidi me tornar treinador. O foco passou a ser outro:
+              estruturação do time, análise de adversários e gestão de ambiente e de performance.
+            </p>
+            <p>
+              Treinei a equipe feminina da FURIA, e juntos conquistamos o vice-campeonato mundial disputado na Suécia.
+              Depois, treinei a equipe masculina do MIBR, conquistando diversos campeonatos nacionais e
+              disputando dois Majors, nos Estados Unidos e na Hungria.
+            </p>
+          </div>
+
+          <div class="coach-photos">
+            <figure class="photo photo-tilt-left">
+              <img src="assets/web/coach-03.jpg" alt="Jhonatan como treinador da FURIA, com a camisa do time" width="900" height="840" loading="lazy">
+            </figure>
+            <figure class="photo photo-lift">
+              <img src="assets/web/coach-01.jpg" alt="Jhonatan como treinador do MIBR, de braços cruzados e headset" width="441" height="620" loading="lazy">
+            </figure>
+            <figure class="photo photo-tilt-right">
+              <img src="assets/web/coach-02.jpg" alt="Jhonatan erguendo um troféu com a camisa do MIBR" width="350" height="613" loading="lazy">
+            </figure>
+          </div>
+        </div>
+
+        <p class="thanks">Obrigado por visitar meu site e ler até aqui!</p>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section contact" id="contato">
+      <div class="wrap">
+        <h2 class="contact-title">Contato</h2>
+
+        <div class="contact-grid">
+          <div class="contact-mail">
+            <span class="contact-label">E-mail</span>
+            <a href="mailto:jsm_jhonatan@hotmail.com" class="contact-mail-address">jsm_jhonatan@<wbr>hotmail.com</a>
+            <div class="contact-mail-actions">
+              <button type="button" class="chip chip-solid" data-copy="jsm_jhonatan@hotmail.com">Copiar endereço</button>
+              <a href="mailto:jsm_jhonatan@hotmail.com" class="chip">Escrever e-mail</a>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="retorno" class="section">
-        <div class="section-head">
-          <span class="section-index">04</span>
-          <h2 class="section-title">Retorno</h2>
-        </div>
-        <div class="section-body">
-          <p><strong>Por que eu decidi voltar?</strong></p>
-          <p>
-            Sou uma pessoa que sempre pensa alguns anos à frente. Em 2017, com 23 anos, eu me imaginava aos 30 sendo um atleta de sucesso dentro dos eSports, o que aconteceu em nível nacional.
-          </p>
-          <p>
-            Hoje, com 32, não me vejo com 40 anos ainda no mundo dos eSports. Mas consigo me ver um profissional de sucesso na área de Tecnologia.
-          </p>
-          <p>
-            Obrigado se você leu até aqui.
-          </p>
-        </div>
-      </section>
+          <ul class="contact-links">
+            <li>
+              <a href="https://www.linkedin.com/in/jhonatanmoura/" target="_blank" rel="noopener" class="contact-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                <span class="contact-link-text">
+                  <span class="contact-label">LinkedIn</span>
+                  <span class="contact-value">in/jhonatanmoura</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/JhonatanSilva94" target="_blank" rel="noopener" class="contact-link">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                <span class="contact-link-text">
+                  <span class="contact-label">GitHub</span>
+                  <span class="contact-value">JhonatanSilva94</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/jntcs2/" target="_blank" rel="noopener" class="contact-link">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="17.6" cy="6.4" r="1.4" fill="currentColor"/></svg>
+                <span class="contact-link-text">
+                  <span class="contact-label">Instagram</span>
+                  <span class="contact-value">@jntcs2</span>
+                </span>
+              </a>
+            </li>
+          </ul>
 
-      <section id="contato" class="section">
-        <div class="section-head">
-          <span class="section-index">05</span>
-          <h2 class="section-title">Contato</h2>
+          <a href="assets/cv.pdf" download class="contact-cv">
+            <span>
+              <span class="contact-cv-title">Currículo</span>
+              <span class="contact-cv-detail">PDF com experiências e formação</span>
+            </span>
+            <span class="contact-cv-action">Baixar</span>
+          </a>
         </div>
-        <div class="section-body">
-          <div class="contact-links">
-            <a href="https://www.linkedin.com/in/jhonatanmoura/" target="_blank" rel="noopener" class="contact-link">LinkedIn ↗</a>
-            <a href="mailto:jsm_jhonatan@hotmail.com" class="contact-link">E-mail ↗</a>
-            <a href="https://www.instagram.com/jntcs2/" target="_blank" rel="noopener" class="contact-link">Instagram ↗</a>
-          </div>
-        </div>
-      </section>
-    </main>
+      </div>
 
-    <footer class="footer">
-      <p>Jhonatan Silva — Portfólio pessoal</p>
-    </footer>
-  </div>
+      <div class="wrap footer-inner">
+        <p>Jhonatan Silva, 2026</p>
+        <p>Servido por S3 e CloudFront, provisionado com Terraform.</p>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
