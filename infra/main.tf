@@ -7,7 +7,14 @@ terraform {
   }
 }
 
+# Provider padrao: Sao Paulo
 provider "aws" {
+  region = "sa-east-1"
+}
+
+# Provider fixo em us-east-1: exigido pelo CloudFront para o certificado ACM
+provider "aws" {
+  alias  = "us_east_1"
   region = "us-east-1"
 }
 
@@ -17,18 +24,18 @@ variable "domain_name" {
   default     = "jhonatanmoura.com"
 }
 
-# --- Hospedagem estatica: S3 (privado) + CloudFront ---
+# --- Hospedagem estatica: S3 (privado, sa-east-1) + CloudFront ---
 
-resource "aws_s3_bucket" "site" {
-  bucket = "${replace(var.domain_name, ".", "-")}-portfolio-site"
+resource "aws_s3_bucket" "site_sa" {
+  bucket = "${replace(var.domain_name, ".", "-")}-portfolio-site-sa"
 
   tags = {
     Name = "portfolio-site"
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "site" {
-  bucket = aws_s3_bucket.site.id
+resource "aws_s3_bucket_public_access_block" "site_sa" {
+  bucket = aws_s3_bucket.site_sa.id
 
   block_public_acls       = true
   block_public_policy     = true
@@ -39,6 +46,7 @@ resource "aws_s3_bucket_public_access_block" "site" {
 # --- Certificado ACM (us-east-1, exigido pelo CloudFront) ---
 
 resource "aws_acm_certificate" "site" {
+  provider          = aws.us_east_1
   domain_name       = var.domain_name
   validation_method = "DNS"
 
@@ -69,6 +77,7 @@ resource "aws_route53_record" "cert_validation" {
 }
 
 resource "aws_acm_certificate_validation" "site" {
+  provider                = aws.us_east_1
   certificate_arn         = aws_acm_certificate.site.arn
   validation_record_fqdns = [for record in aws_route53_record.cert_validation : record.fqdn]
 }
@@ -91,7 +100,7 @@ resource "aws_cloudfront_distribution" "site" {
   price_class         = "PriceClass_100"
 
   origin {
-    domain_name              = aws_s3_bucket.site.bucket_regional_domain_name
+    domain_name              = aws_s3_bucket.site_sa.bucket_regional_domain_name
     origin_id                = "s3-portfolio-site"
     origin_access_control_id = aws_cloudfront_origin_access_control.site.id
   }
@@ -101,8 +110,8 @@ resource "aws_cloudfront_distribution" "site" {
     viewer_protocol_policy = "redirect-to-https"
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
-    compress               = true
     cache_policy_id        = "658327ea-f89d-4fab-a63d-7e88639e58f6" # Managed-CachingOptimized
+    compress               = true
   }
 
   restrictions {
@@ -122,8 +131,8 @@ resource "aws_cloudfront_distribution" "site" {
   }
 }
 
-resource "aws_s3_bucket_policy" "site" {
-  bucket = aws_s3_bucket.site.id
+resource "aws_s3_bucket_policy" "site_sa" {
+  bucket = aws_s3_bucket.site_sa.id
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -133,7 +142,7 @@ resource "aws_s3_bucket_policy" "site" {
         Effect    = "Allow"
         Principal = { Service = "cloudfront.amazonaws.com" }
         Action    = "s3:GetObject"
-        Resource  = "${aws_s3_bucket.site.arn}/*"
+        Resource  = "${aws_s3_bucket.site_sa.arn}/*"
         Condition = {
           StringEquals = {
             "AWS:SourceArn" = aws_cloudfront_distribution.site.arn
@@ -143,11 +152,11 @@ resource "aws_s3_bucket_policy" "site" {
     ]
   })
 
-  depends_on = [aws_s3_bucket_public_access_block.site]
+  depends_on = [aws_s3_bucket_public_access_block.site_sa]
 }
 
 output "s3_bucket_name" {
-  value = aws_s3_bucket.site.bucket
+  value = aws_s3_bucket.site_sa.bucket
 }
 
 output "cloudfront_distribution_id" {
