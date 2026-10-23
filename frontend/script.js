@@ -1,29 +1,12 @@
-// ==================== SMOOTH SCROLL ====================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      history.pushState(null, null, targetId);
-    }
-  });
-});
-
 // ==================== LINK ATIVO CONFORME SCROLL ====================
-const tabs = document.querySelectorAll('.nav-link');
+const tabs = document.querySelectorAll('.nav-link[href^="#"]');
 const sections = document.querySelectorAll('.section[id]');
 
 function updateActiveTab() {
-  let currentSection = '';
+  let currentSection = 'inicio';
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (window.scrollY >= sectionTop - 150) {
+    if (window.scrollY >= section.offsetTop - 150) {
       currentSection = section.getAttribute('id');
     }
   });
@@ -33,5 +16,21 @@ function updateActiveTab() {
   });
 }
 
-window.addEventListener('scroll', updateActiveTab);
+window.addEventListener('scroll', updateActiveTab, { passive: true });
 updateActiveTab();
+
+// ==================== COPIAR E-MAIL ====================
+document.querySelectorAll('[data-copy]').forEach(button => {
+  const label = button.textContent;
+
+  button.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(button.dataset.copy);
+      button.textContent = 'Endereço copiado';
+      setTimeout(() => { button.textContent = label; }, 2000);
+    } catch {
+      // Sem acesso à área de transferência: abre o cliente de e-mail
+      window.location.href = `mailto:${button.dataset.copy}`;
+    }
+  });
+});

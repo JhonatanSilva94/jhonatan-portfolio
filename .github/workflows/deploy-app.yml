@@ -20,10 +20,10 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: sa-east-1
 
       - name: Sincronizar arquivos com o S3
-        run: aws s3 sync frontend/ s3://jhonatanmoura-com-portfolio-site --delete
+        run: aws s3 sync frontend/ s3://jhonatanmoura-com-portfolio-site-sa --delete
 
       - name: Invalidar cache do CloudFront
         run: |
