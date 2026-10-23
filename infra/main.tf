@@ -48,6 +48,7 @@ resource "aws_s3_bucket_public_access_block" "site_sa" {
 resource "aws_acm_certificate" "site" {
   provider          = aws.us_east_1
   domain_name       = var.domain_name
+  subject_alternative_names = ["www.${var.domain_name}"]
   validation_method = "DNS"
 
   lifecycle {
@@ -92,11 +93,37 @@ resource "aws_cloudfront_origin_access_control" "site" {
   signing_protocol                  = "sigv4"
 }
 
+resource "aws_cloudfront_function" "www_redirect" {
+  name    = "portfolio-www-redirect"
+  runtime = "cloudfront-js-2.0"
+  comment = "Redireciona www para o dominio principal"
+  publish = true
+
+  code = <<-EOT
+    function handler(event) {
+      var request = event.request;
+      var host = request.headers.host.value;
+
+      if (host.startsWith('www.')) {
+        return {
+          statusCode: 301,
+          statusDescription: 'Moved Permanently',
+          headers: {
+            location: { value: 'https://' + host.substring(4) + request.uri }
+          }
+        };
+      }
+
+      return request;
+    }
+  EOT
+}
+
 resource "aws_cloudfront_distribution" "site" {
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
-  aliases             = [var.domain_name]
+  aliases             = [var.domain_name, "www.${var.domain_name}"]
   price_class         = "PriceClass_100"
 
   origin {
@@ -112,6 +139,10 @@ resource "aws_cloudfront_distribution" "site" {
     cached_methods         = ["GET", "HEAD"]
     cache_policy_id        = "658327ea-f89d-4fab-a63d-7e88639e58f6" # Managed-CachingOptimized
     compress               = true
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.www_redirect.arn
+    }
   }
 
   restrictions {
